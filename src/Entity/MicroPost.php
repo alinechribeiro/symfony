@@ -26,8 +26,7 @@ class MicroPost
     private $text;
 
     #[ORM\Column(type: 'datetime')]
-    private $created
-    ;
+    private $created;
 
     public function getId(): ?int
     {
