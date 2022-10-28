@@ -145,15 +145,16 @@ class AppFixtures extends Fixture
 
 And the command to run the fixtures is
 ```sh
-$ symfony console doctrine:fixtures:load
+$ symfony console doctrine:fixtures:load  // << this will load fake data to your datbase :)
 ```
 
 
  Next: Review the new migration "migrations/Version20221015184914.php"
  Then: Run the migration with php bin/console doctrine:migrations:migrate
+ 
  See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
 
-# migrations:
+# Migrations:
 ```sh
 $ php bin/console doctrine:migrations:migrate
 ```
@@ -164,10 +165,10 @@ $ composer require sensio/framework-extra-bundle
 ```
 
 # DoctrineFixturesBundle
-symfony.com/bundles/DoctrineFixturesBundle/current/index.html#installation
+[symfony.com/bundles/DoctrineFixturesBundle/current/index.html#installation](symfony.com/bundles/DoctrineFixturesBundle/current/index.html#installation)
 
-#SensioFramework
-symfony.com/bundles/SensioFrameworkExtraBundle/current/annotations/converters.html
+# SensioFramework 
+[symfony.com/bundles/SensioFrameworkExtraBundle/current/annotations/converters.html](symfony.com/bundles/SensioFrameworkExtraBundle/current/annotations/converters.html)
 ```sh
 composer require sensio/framework-extra-bundle
 ```
@@ -223,7 +224,7 @@ How to set up xdebug with phpstorm: https://www.jetbrains.com/help/phpstorm/conf
 ### We added Bootstrap to base.html.twig (https://getbootstrap.com/)
 
 #### From Symfony documentation (https://symfony.com/doc/current/forms.html#rendering-forms) we added on twig.yaml the  following
-# the file: config/packages/twig.yaml
+# The file: config/packages/twig.yaml
 ```sh 
 twig:
     form_themes: ['bootstrap_5_layout.html.twig']
@@ -260,4 +261,4 @@ form:
   legacy_error_messages: false
 ```
 
-Database Relations in Doctrine see on /docs/data-relations-in-doctrine.md
+Database Relations in Doctrine see on [/docs/data-relations-in-doctrine.md](/docs/data-relations-in-doctrine.md)
