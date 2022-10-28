@@ -20,6 +20,10 @@ security:
                 login_path: app_login # it will render the login form. app_login will be the route. login_path is when people need to authenticate in any part of the website, this will be redirected to login_path
                 check_path: app_login # we use the same route. that's the route that all credentials will be sent to the check to be verified.
 
+            logout:
+                path: app_logout
+                target: app_login # where to redirect once the user has logged out.
+                
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
@@ -31,6 +35,11 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+
+    role_hierarchy:
+        ROLE_ADMIN: [ROLE_EDITOR]
+        ROLE_EDITOR: [ROLE_COMMENTER]
+        ROLE_COMMENTER: [ROLE_USER]
 
 when@test:
     security:

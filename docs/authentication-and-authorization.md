@@ -96,3 +96,28 @@ The only obligatory action is to render the form, nothing else.
 But we added the last username so if the user types the wrong password, we already bring the same username for next temptive. This comes from the class use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 We added AuthenticationUtils $utils as parameter in index method and you can check on [/src/Controller/LoginController.php](/src/Controller/LoginController.php) the result. :)
 
+3. create a template with the login form itself.
+The template created was [/templates/login/index.html.twig](/templates/login/index.html.twig)
+
+We created form in html, we won't be creating a form type class to be specific. Why? We submit the form to this url 'app_login'. On the LoginController, Symfony will take over the form submission, Symfony will just intercept the request. So we only need to do the html form fields:
+_username needs to be this name to be captured by Symfony as username. Same for _password.
+If you would like to redirect the url after saving, you can add a hidden input '_target_path' named.
+Hint: we could also use path() here or pass the URL to redirect to from the controller eg. user last visited page.
+
+For logout we created:
+1. on security.yaml 
+```sh
+    logout:
+        path: app_logout
+        target: app_login # where to redirect once the user has logged out.
+```
+
+2. We could use any controller, on that case we used LoginController to add the route and method logout():
+```sh
+    #[Route('/logout', name: 'app_logout')]
+    public function logout()
+    {}
+```
+Any logic in the logout action as Symfony will intercept the logout and redirect to the defined path.
+
+3. Added the link logout (same place of the login).
