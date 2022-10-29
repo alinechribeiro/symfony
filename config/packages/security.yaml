@@ -16,6 +16,7 @@ security:
         main:
             lazy: true
             provider: app_user_provider
+            user_checker: App\Security\UserChecker
             form_login:
                 login_path: app_login # it will render the login form. app_login will be the route. login_path is when people need to authenticate in any part of the website, this will be redirected to login_path
                 check_path: app_login # we use the same route. that's the route that all credentials will be sent to the check to be verified.
